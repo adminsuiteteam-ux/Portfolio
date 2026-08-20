@@ -1,7 +1,8 @@
-/* eslint-disable */
+/* eslint-disable @shopify/jsx-no-hardcoded-content */
 import React, { useState } from 'react';
 import { FadeIn } from './FadeIn';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { ContactButton } from './ContactButton';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
