@@ -2,81 +2,116 @@
 // securecoder-disable jsx-no-hardcoded-content
 import React from 'react';
 import { FadeIn } from './FadeIn';
-import { CheckCircle2, MessageSquare, Info } from 'lucide-react';
+import { CheckCircle2, MessageSquare, Info, Sparkles, Zap, Smartphone, Code2, Layers, Cpu } from 'lucide-react';
 
 interface PricingTier {
+  id: string;
   title: string;
   price: string;
   subPrice?: string;
+  tag: string;
+  tagIcon: React.ElementType;
+  tagColor: string;
   badge?: string;
   description: string;
   features: string[];
-  recommended?: boolean;
+  featured?: boolean;
+  accentBorder: string;
+  glowBg: string;
 }
 
 const PRICING_TIERS: PricingTier[] = [
   {
+    id: 'landing-page',
     title: 'Landing Page',
     price: '₦250,000',
+    tag: 'Fast Launch',
+    tagIcon: Zap,
+    tagColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+    accentBorder: 'border-emerald-500/30 hover:border-emerald-400/60',
+    glowBg: 'from-emerald-950/20 via-transparent to-transparent',
     description: 'High-converting, responsive single-page landing site built with pure web standards.',
     features: [
-      'HTML5, CSS3 & JavaScript',
-      'Fully Responsive & Mobile Optimized',
-      'SEO & Performance Tuning',
-      'Contact Form & WhatsApp Quick-Connect',
-      'Fast Delivery & Clean Code',
+      'HTML5, CSS3 & JavaScript Stack',
+      'Fully Responsive Mobile & Desktop Layout',
+      'SEO Performance & Speed Optimization',
+      'Contact Form & WhatsApp Integration',
+      'Fast Delivery & Clean Architecture',
     ],
   },
   {
-    title: 'React Native Mobile App',
+    id: 'react-native',
+    title: 'React Native App',
     price: '₦350,000',
+    tag: 'Cross-Platform',
+    tagIcon: Smartphone,
+    tagColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
+    accentBorder: 'border-cyan-500/30 hover:border-cyan-400/60',
+    glowBg: 'from-cyan-950/20 via-transparent to-transparent',
     description: 'Cross-platform iOS and Android mobile application using Expo and React Native.',
     features: [
-      'React Native & React Expo',
-      'iOS & Android Support',
+      'React Native & React Expo Engine',
+      'Single Codebase for iOS & Android',
       'Modern Mobile UI/UX Components',
       'Push Notifications & Local Storage',
       'App Store / Play Store Build Prep',
     ],
   },
   {
+    id: 'frontend-react',
     title: 'Frontend (Strictly React)',
     price: '₦450,000',
-    recommended: true,
-    badge: 'Popular',
+    tag: 'Modern React',
+    tagIcon: Code2,
+    tagColor: 'bg-sky-500/10 text-sky-400 border-sky-500/30',
+    accentBorder: 'border-sky-500/30 hover:border-sky-400/60',
+    glowBg: 'from-sky-950/20 via-transparent to-transparent',
     description: 'Dynamic, feature-rich single page applications built with React and TypeScript.',
     features: [
-      'React.js & TypeScript Stack',
-      'Advanced State Management',
-      'Smooth Page Animations & Micro-interactions',
+      'React.js & TypeScript Modern Architecture',
+      'Advanced State Management & Hooks',
+      'Smooth Page Transitions & Micro-interactions',
       'REST API & Webhook Integration',
-      'Component-Driven Scalable Architecture',
+      'Reusable Component Design System',
     ],
   },
   {
+    id: 'fullstack-webapp',
     title: 'Full Stack Web App',
     price: '₦700,000',
-    badge: 'Enterprise',
-    description: 'End-to-end full stack web application with backend server, database, and admin dashboard.',
+    featured: true,
+    badge: '🔥 Most Popular',
+    tag: 'Full Stack Power',
+    tagIcon: Layers,
+    tagColor: 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-pink-300 border-pink-500/40 shadow-sm shadow-pink-500/20',
+    accentBorder: 'border-pink-500/50 hover:border-pink-400 shadow-2xl shadow-pink-900/30',
+    glowBg: 'from-purple-950/50 via-pink-950/20 to-transparent',
+    description: 'End-to-end full stack web application with backend server, database, and admin portal.',
     features: [
       'React Frontend + Django / Node.js Backend',
-      'Database Architecture (PostgreSQL/MongoDB)',
+      'Scalable Database (PostgreSQL / MongoDB)',
       'Secure User Authentication & RBAC',
       'Custom Admin Management Portal',
-      'Payment Gateway Integration',
+      'Payment Gateway Integration & Webhooks',
     ],
   },
   {
-    title: 'Custom Mobile Enterprise',
+    id: 'custom-mobile-enterprise',
+    title: 'Custom Mobile & Enterprise',
     price: 'Varies',
-    subPrice: 'Based on stack & workload',
-    description: 'Bespoke mobile solution designed for complex workflows, high workload, and scalability.',
+    subPrice: 'Based on workload & stack',
+    tag: 'Bespoke Scale',
+    tagIcon: Cpu,
+    tagColor: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+    accentBorder: 'border-amber-500/30 hover:border-amber-400/60',
+    glowBg: 'from-amber-950/20 via-transparent to-transparent',
+    description: 'Bespoke software solution designed for complex workflows, high workload, and scalability.',
     features: [
-      'Custom App Architecture & Tech Stack',
-      'Scales with Workload & Feature Size',
+      'Custom Architecture Tailored to Workload',
+      'Scales with Feature Count & User Base',
       'Real-time Chat & WebSockets Support',
-      'Custom Backend & Third-party Integrations',
-      'Dedicated Maintenance & Support',
+      'Third-party Cloud APIs & Microservices',
+      'Dedicated Maintenance & Priority Support',
     ],
   },
 ];
@@ -88,96 +123,109 @@ export const PricingSection: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="relative z-10 bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 border-t border-[#D7E2EA]/10"
+      className="relative z-10 bg-[#0C0C0C] px-4 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 border-t border-[#D7E2EA]/10 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-br from-purple-900/15 to-transparent blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         {/* Heading */}
         <FadeIn delay={0} y={40} className="w-full text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-[#D7E2EA]/80 text-xs font-semibold uppercase tracking-widest mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#B600A8]" />
+            Transparent Pricing
+          </div>
           <h2
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
-            style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+            style={{ fontSize: 'clamp(2.8rem, 11vw, 150px)' }}
           >
             Pricing
           </h2>
-          <p className="text-[#D7E2EA]/70 text-sm sm:text-base md:text-lg max-w-xl mx-auto mt-4 font-light uppercase tracking-wider">
-            Transparent pricing plans designed for speed, performance, and scalability.
+          <p className="text-[#D7E2EA]/70 text-xs sm:text-sm md:text-base max-w-xl mx-auto mt-4 font-light uppercase tracking-wider">
+            Tailored engineering packages built for speed, performance, and scalability.
           </p>
         </FadeIn>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full mt-16 sm:mt-20">
+        {/* 21st.dev Inspired Glassmorphic Pricing Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full mt-14 sm:mt-18">
           {PRICING_TIERS.map((tier, index) => {
+            const TagIcon = tier.tagIcon;
             const encodedTitle = encodeURIComponent(`${tier.title} package`);
             return (
               <FadeIn
-                key={tier.title}
-                delay={index * 0.1}
+                key={tier.id}
+                delay={index * 0.08}
                 y={30}
-                className={`relative rounded-[32px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
-                  tier.recommended
-                    ? 'bg-gradient-to-b from-[#1c0828] to-[#0C0C0C] border-2 border-[#B600A8] shadow-2xl shadow-[#B600A8]/20'
-                    : 'bg-[#121212] border border-[#D7E2EA]/15 hover:border-[#D7E2EA]/40'
+                className={`relative rounded-[32px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 group bg-gradient-to-b ${tier.glowBg} bg-[#111111]/90 backdrop-blur-xl border ${tier.accentBorder} ${
+                  tier.featured ? 'lg:-translate-y-2' : ''
                 }`}
               >
-                {/* Badge if present */}
+                {/* Popular Badge */}
                 {tier.badge && (
-                  <span
-                    className={`absolute -top-3 right-6 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest ${
-                      tier.recommended
-                        ? 'bg-[#B600A8] text-white'
-                        : 'bg-[#D7E2EA]/20 text-[#D7E2EA]'
-                    }`}
-                  >
+                  <div className="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-gradient-to-r from-[#B600A8] to-[#7621B0] text-white shadow-lg shadow-purple-900/40 border border-white/20">
                     {tier.badge}
-                  </span>
+                  </div>
                 )}
 
                 <div>
-                  <h3 className="font-medium uppercase text-xl sm:text-2xl text-[#D7E2EA]">
+                  {/* Tag badge with unique icon */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider border ${tier.tagColor}`}
+                    >
+                      <TagIcon className="w-3.5 h-3.5" />
+                      {tier.tag}
+                    </span>
+                  </div>
+
+                  <h3 className="font-medium uppercase text-xl sm:text-2xl text-[#D7E2EA] tracking-wide">
                     {tier.title}
                   </h3>
 
-                  <div className="my-4 flex items-baseline gap-2">
-                    <span className="font-black text-3xl sm:text-4xl text-white tracking-tight">
-                      {tier.price}
-                    </span>
+                  {/* Price display */}
+                  <div className="my-4 flex flex-col">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-black text-3xl sm:text-4xl text-white tracking-tight">
+                        {tier.price}
+                      </span>
+                    </div>
                     {tier.subPrice && (
-                      <span className="text-xs uppercase text-[#D7E2EA]/60 font-light">
+                      <span className="text-xs uppercase text-[#D7E2EA]/60 font-light mt-1">
                         {tier.subPrice}
                       </span>
                     )}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#D7E2EA]/70 font-light leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#D7E2EA]/75 font-light leading-relaxed mb-6">
                     {tier.description}
                   </p>
 
-                  <div className="w-full h-px bg-[#D7E2EA]/10 my-4" />
+                  <div className="w-full h-px bg-white/10 my-4" />
 
-                  {/* Feature list */}
+                  {/* Feature checklist */}
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feat) => (
-                      <li key={feat} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#D7E2EA]">
-                        <CheckCircle2 className="w-4 h-4 text-[#B600A8] flex-shrink-0 mt-0.5" />
+                      <li key={feat} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#D7E2EA]/90 leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* CTA Button */}
+                {/* WhatsApp Action Button */}
                 <a
                   href={`${whatsappBaseUrl}${encodedTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-3.5 rounded-full font-medium uppercase tracking-widest text-xs sm:text-sm transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer ${
-                    tier.recommended
-                      ? 'bg-gradient-to-r from-[#B600A8] to-[#7621B0] text-white hover:opacity-90 shadow-lg'
-                      : 'bg-[#D7E2EA]/10 hover:bg-[#D7E2EA]/20 text-[#D7E2EA] border border-[#D7E2EA]/20'
+                  className={`w-full py-3.5 rounded-full font-semibold uppercase tracking-widest text-xs sm:text-sm transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer select-none group-hover:scale-[1.02] active:scale-95 ${
+                    tier.featured
+                      ? 'bg-gradient-to-r from-[#B600A8] via-[#8923b7] to-[#BE4C00] text-white shadow-xl shadow-purple-900/50 hover:brightness-110'
+                      : 'bg-white/10 hover:bg-white/15 text-white border border-white/15'
                   }`}
                 >
                   <MessageSquare className="w-4 h-4" />
-                  Order Project
+                  Order Package
                 </a>
               </FadeIn>
             );
@@ -185,8 +233,8 @@ export const PricingSection: React.FC = () => {
         </div>
 
         {/* Disclaimer Banner */}
-        <FadeIn delay={0.4} y={20} className="w-full max-w-4xl mt-14 sm:mt-16">
-          <div className="rounded-2xl bg-[#161616] border border-[#D7E2EA]/15 p-5 sm:p-6 flex items-start gap-4 text-xs sm:text-sm text-[#D7E2EA]/80 leading-relaxed">
+        <FadeIn delay={0.35} y={20} className="w-full max-w-4xl mt-14 sm:mt-16">
+          <div className="rounded-2xl bg-[#141414]/90 backdrop-blur-md border border-[#D7E2EA]/15 p-5 sm:p-6 flex items-start gap-4 text-xs sm:text-sm text-[#D7E2EA]/80 leading-relaxed shadow-lg">
             <Info className="w-5 h-5 text-[#B600A8] flex-shrink-0 mt-0.5" />
             <div>
               <span className="font-semibold text-white uppercase tracking-wider block mb-1">
