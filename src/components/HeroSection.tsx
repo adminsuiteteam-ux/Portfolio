@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
           className="w-full flex justify-center items-center"
         >
           <img
-            src="/dimacode-portrait.png"
+            src="./dimacode-portrait.png"
             alt="Dimacode Portrait"
             className="w-full h-auto object-contain object-bottom pointer-events-none drop-shadow-2xl brightness-105 mx-auto block"
           />
