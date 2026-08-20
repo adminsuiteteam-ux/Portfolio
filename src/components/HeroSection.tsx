@@ -14,15 +14,15 @@ export const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip bg-[#0C0C0C]">
+    <section className="relative h-screen min-h-[600px] w-full flex flex-col justify-between overflow-hidden bg-[#0C0C0C]">
       {/* Navbar */}
-      <FadeIn delay={0} y={-20} className="w-full px-6 md:px-10 pt-6 md:pt-8 z-20">
+      <FadeIn delay={0} y={-20} className="w-full px-4 sm:px-6 md:px-10 pt-5 sm:pt-6 md:pt-8 z-30">
         <nav className="w-full flex justify-between items-center max-w-7xl mx-auto">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
+              className="text-[#D7E2EA] font-semibold uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.35rem] hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -30,46 +30,44 @@ export const HeroSection: React.FC = () => {
         </nav>
       </FadeIn>
 
-      {/* Hero Heading Container */}
-      <div className="overflow-hidden w-full relative z-0 flex justify-center items-center px-4 my-auto">
-        <FadeIn delay={0.15} y={40} className="w-full flex justify-center">
+      {/* Hero Heading Container - Centered and Bold on both Mobile and Desktop */}
+      <div className="w-full relative z-0 flex flex-col justify-center items-center px-4 my-auto pt-4 pb-20 sm:pb-32 md:pb-40">
+        <FadeIn delay={0.1} y={30} className="w-full flex justify-center">
           <h1
-            className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center select-none"
-            style={{ fontSize: 'clamp(2rem, 11vw, 150px)' }}
+            className="hero-heading font-black uppercase tracking-tight leading-[0.92] text-center select-none max-w-6xl mx-auto"
+            style={{ fontSize: 'clamp(2.4rem, 10vw, 150px)' }}
           >
             Hi, i&apos;m dimacode
           </h1>
         </FadeIn>
       </div>
 
-      {/* Hero Portrait (Increased size, positioned closer to bottom subtext) */}
-      <FadeIn
-        delay={0.6}
-        y={30}
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 z-10 w-[320px] sm:w-[400px] md:w-[480px] lg:w-[560px] pointer-events-auto flex justify-center items-end"
-      >
-        <Magnet
-          padding={150}
-          strength={3}
-          activeTransition="transform 0.3s ease-out"
-          inactiveTransition="transform 0.6s ease-in-out"
-          className="w-full flex justify-center items-center"
-        >
-          <img
-            src="./dimacode-portrait.png"
-            alt="Dimacode Portrait"
-            className="w-full h-auto object-contain object-bottom pointer-events-none drop-shadow-2xl brightness-105 mx-auto block"
-          />
-        </Magnet>
-      </FadeIn>
+      {/* Hero Portrait - Always perfectly centered at the bottom */}
+      <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center items-end pointer-events-none">
+        <div className="pointer-events-auto flex justify-center items-end max-w-full">
+          <Magnet
+            padding={120}
+            strength={3}
+            activeTransition="transform 0.3s ease-out"
+            inactiveTransition="transform 0.6s ease-in-out"
+            className="flex justify-center items-end"
+          >
+            <img
+              src="./dimacode-portrait.png"
+              alt="Dimacode Portrait"
+              className="w-[280px] xs:w-[320px] sm:w-[400px] md:w-[480px] lg:w-[560px] max-h-[50vh] sm:max-h-[58vh] md:max-h-[64vh] h-auto object-contain object-bottom pointer-events-none drop-shadow-2xl brightness-110 mx-auto block select-none"
+            />
+          </Magnet>
+        </div>
+      </div>
 
       {/* Bottom Bar */}
-      <div className="w-full px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 flex justify-start items-end z-20 max-w-7xl mx-auto">
+      <div className="w-full px-4 sm:px-6 md:px-10 pb-5 sm:pb-7 md:pb-9 flex justify-start items-end z-20 max-w-7xl mx-auto pointer-events-none">
         {/* Left text */}
-        <FadeIn delay={0.35} y={20} className="max-w-[200px] sm:max-w-[260px] md:max-w-[340px]">
+        <FadeIn delay={0.3} y={20} className="max-w-[240px] sm:max-w-[290px] md:max-w-[370px] pointer-events-auto bg-[#0C0C0C]/60 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-1.5 sm:p-0 rounded-md">
           <p
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug"
-            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.35rem)' }}
+            className="text-[#D7E2EA] font-normal uppercase tracking-wide leading-snug"
+            style={{ fontSize: 'clamp(0.72rem, 1.35vw, 1.25rem)' }}
           >
             web & mobile software developer, videographer, graphic designer & social media manager
           </p>
