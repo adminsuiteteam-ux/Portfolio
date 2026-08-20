@@ -1,10 +1,28 @@
 /* eslint-disable @shopify/jsx-no-hardcoded-content */
 // securecoder-disable jsx-no-hardcoded-content
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FadeIn } from './FadeIn';
 import { Magnet } from './Magnet';
 
+const HERO_TEXTS = [
+  "Hi, i'm dimacode",
+  "Software Developer",
+  "Videographer",
+  "Graphic Designer",
+  "Social Media Manager",
+];
+
 export const HeroSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % HERO_TEXTS.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
+
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#services' },
@@ -30,16 +48,37 @@ export const HeroSection: React.FC = () => {
         </nav>
       </FadeIn>
 
-      {/* Hero Heading Container - Centered and Bold on both Mobile and Desktop */}
-      <div className="w-full relative z-0 flex flex-col justify-center items-center px-4 my-auto pt-4 pb-20 sm:pb-32 md:pb-40">
-        <FadeIn delay={0.1} y={30} className="w-full flex justify-center">
-          <h1
+      {/* Hero Heading Container - Dynamically changing through Skill Sets with Smooth Animation */}
+      <div className="w-full relative z-0 flex flex-col justify-center items-center px-4 my-auto pt-4 pb-20 sm:pb-32 md:pb-40 min-h-[160px] sm:min-h-[220px]">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={HERO_TEXTS[currentIndex]}
+            initial={{ opacity: 0, y: 35, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: -35, filter: 'blur(8px)' }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="hero-heading font-black uppercase tracking-tight leading-[0.92] text-center select-none max-w-6xl mx-auto"
-            style={{ fontSize: 'clamp(2.4rem, 10vw, 150px)' }}
+            style={{ fontSize: 'clamp(2.2rem, 8.8vw, 135px)' }}
           >
-            Hi, i&apos;m dimacode
-          </h1>
-        </FadeIn>
+            {HERO_TEXTS[currentIndex]}
+          </motion.h1>
+        </AnimatePresence>
+
+        {/* Skill badge dots indicator */}
+        <div className="flex gap-2 mt-4 z-10">
+          {HERO_TEXTS.map((text, idx) => (
+            <button
+              key={text}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+                idx === currentIndex
+                  ? 'w-8 bg-[#D7E2EA]'
+                  : 'w-2 bg-[#D7E2EA]/30 hover:bg-[#D7E2EA]/60'
+              }`}
+              aria-label={`Switch to ${text}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Hero Portrait - Always perfectly centered at the bottom */}
