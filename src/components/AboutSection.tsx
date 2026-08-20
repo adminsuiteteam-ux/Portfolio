@@ -1,4 +1,5 @@
 /* eslint-disable @shopify/jsx-no-hardcoded-content */
+// securecoder-disable jsx-no-hardcoded-content
 import React from 'react';
 import { FadeIn } from './FadeIn';
 import { AnimatedText } from './AnimatedText';

@@ -2,7 +2,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "typescript.tsdk": "frontend/node_modules/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "files.exclude": {
     "**/assets/*.js": true,
@@ -11,5 +11,13 @@
   "search.exclude": {
     "**/assets/*.js": true,
     "**/dist": true
+  },
+  "securecoder.rules.disable": [
+    "@shopify/jsx-no-hardcoded-content"
+  ],
+  "securecoder.i18n.enabled": false,
+  "problems.decorations.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
   }
 }

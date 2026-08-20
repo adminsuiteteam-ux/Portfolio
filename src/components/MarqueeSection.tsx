@@ -1,4 +1,5 @@
 /* eslint-disable @shopify/jsx-no-hardcoded-content */
+// securecoder-disable jsx-no-hardcoded-content
 import React, { useRef, useState, useEffect } from 'react';
 
 const LIVE_SITE_SCREENSHOTS = [
