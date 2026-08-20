@@ -10,12 +10,9 @@ interface ProjectData {
   title: string;
   category: string;
   href: string;
-  col1Img1: string;
-  col1Img1Label: string;
-  col1Img2: string;
-  col1Img2Label: string;
-  col2Img: string;
-  col2ImgLabel: string;
+  heroImg: string;
+  featuresImg: string;
+  showcaseImg: string;
 }
 
 const PROJECTS_DATA: ProjectData[] = [
@@ -24,60 +21,45 @@ const PROJECTS_DATA: ProjectData[] = [
     title: 'Egold Technology',
     category: 'Client Website',
     href: 'https://egoldtechnology.com',
-    col1Img1: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com%2Fservices?w=900',
-    col1Img1Label: 'Services & Solutions',
-    col1Img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com%2Fabout?w=1000',
-    col1Img2Label: 'About & Infrastructure',
-    col2Img: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com?w=1280',
-    col2ImgLabel: 'Main Hero & Platform',
+    heroImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com?w=800',
+    featuresImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com?w=1000',
+    showcaseImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com?w=1280',
   },
   {
     number: '02',
     title: 'Gabstep',
     category: 'E-Commerce / Brand',
     href: 'https://gabstep.com',
-    col1Img1: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com%2Fshop?w=900',
-    col1Img1Label: 'Product Catalog & Store',
-    col1Img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com%2Fabout?w=1000',
-    col1Img2Label: 'Brand Story & Features',
-    col2Img: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com?w=1280',
-    col2ImgLabel: 'Live Storefront Experience',
+    heroImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com?w=800',
+    featuresImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com?w=1000',
+    showcaseImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com?w=1280',
   },
   {
     number: '03',
     title: 'Tarepet Montessori',
     category: 'School Web Portal',
     href: 'https://tarepetmontessorischool.com',
-    col1Img1: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com%2Fadmission?w=900',
-    col1Img1Label: 'Admissions & Portal',
-    col1Img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com%2Fabout?w=1000',
-    col1Img2Label: 'Campus & Curriculum',
-    col2Img: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com?w=1280',
-    col2ImgLabel: 'Main Portal & Home',
+    heroImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com?w=800',
+    featuresImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com?w=1000',
+    showcaseImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com?w=1280',
   },
   {
     number: '04',
     title: 'Brownforte Mechanical',
     category: 'Engineering Portal',
     href: 'https://brownfortemechanical.com',
-    col1Img1: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com%2Fservices?w=900',
-    col1Img1Label: 'Engineering Services',
-    col1Img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com%2Fprojects?w=1000',
-    col1Img2Label: 'Executed Projects & Tanks',
-    col2Img: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com?w=1280',
-    col2ImgLabel: 'Full Enterprise Homepage',
+    heroImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com?w=800',
+    featuresImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com?w=1000',
+    showcaseImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com?w=1280',
   },
   {
     number: '05',
     title: 'AdminSuite',
     category: 'Full Stack App',
     href: 'https://adminsuite.onrender.com',
-    col1Img1: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com%2Flogin?w=900',
-    col1Img1Label: 'Secure Auth & Access',
-    col1Img2: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com%2Fdashboard?w=1000',
-    col1Img2Label: 'Admin Modules & Control',
-    col2Img: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com?w=1280',
-    col2ImgLabel: 'Full Stack Cloud App',
+    heroImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com?w=800',
+    featuresImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com?w=1000',
+    showcaseImg: 'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com?w=1280',
   },
 ];
 
@@ -126,50 +108,50 @@ const ProjectCard: React.FC<{
           <LiveProjectButton href={project.href} />
         </div>
 
-        {/* Bottom row: Two-column image grid with distinct live section previews */}
+        {/* Bottom row: Two-column image grid displaying DIFFERENT sections of the live site */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 w-full items-stretch">
           {/* Left Column (40% width / 5 cols) */}
           <div className="md:col-span-5 flex flex-col gap-4 sm:gap-6">
-            {/* Distinct section preview 1 */}
-            <div className="group relative w-full overflow-hidden rounded-[28px] sm:rounded-[40px] bg-neutral-900 border border-[#D7E2EA]/15">
+            {/* Section 1: Hero / Header Area Crop */}
+            <div className="group relative w-full overflow-hidden rounded-[24px] sm:rounded-[36px] bg-neutral-900 border border-[#D7E2EA]/15">
               <img
-                src={project.col1Img1}
-                alt={`${project.title} - ${project.col1Img1Label}`}
+                src={project.heroImg}
+                alt={`${project.title} - Header & Hero Section`}
                 loading="lazy"
                 className="w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 style={{ height: 'clamp(140px, 16vw, 220px)' }}
               />
-              <div className="absolute bottom-2 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
-                {project.col1Img1Label}
+              <div className="absolute bottom-2 left-3 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
+                Header & Navigation
               </div>
             </div>
 
-            {/* Distinct section preview 2 */}
-            <div className="group relative w-full overflow-hidden rounded-[28px] sm:rounded-[40px] bg-neutral-900 border border-[#D7E2EA]/15">
+            {/* Section 2: Body / Features / Content Zoom Crop */}
+            <div className="group relative w-full overflow-hidden rounded-[24px] sm:rounded-[36px] bg-neutral-900 border border-[#D7E2EA]/15">
               <img
-                src={project.col1Img2}
-                alt={`${project.title} - ${project.col1Img2Label}`}
+                src={project.featuresImg}
+                alt={`${project.title} - Features & Content Section`}
                 loading="lazy"
-                className="w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                className="w-full object-cover object-bottom group-hover:scale-110 transition-transform duration-500"
                 style={{ height: 'clamp(160px, 20vw, 300px)' }}
               />
-              <div className="absolute bottom-2 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
-                {project.col1Img2Label}
+              <div className="absolute bottom-2 left-3 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
+                Features & Content
               </div>
             </div>
           </div>
 
-          {/* Right Column (60% width / 7 cols) - Main live showcase */}
+          {/* Right Column (60% width / 7 cols) - Full Live Website Overview */}
           <div className="md:col-span-7 flex h-full">
-            <div className="group relative w-full h-full min-h-[260px] sm:min-h-[350px] overflow-hidden rounded-[28px] sm:rounded-[40px] bg-neutral-900 border border-[#D7E2EA]/15">
+            <div className="group relative w-full h-full min-h-[260px] sm:min-h-[350px] overflow-hidden rounded-[24px] sm:rounded-[36px] bg-neutral-900 border border-[#D7E2EA]/15">
               <img
-                src={project.col2Img}
-                alt={`${project.title} - ${project.col2ImgLabel}`}
+                src={project.showcaseImg}
+                alt={`${project.title} - Full Live Showcase`}
                 loading="lazy"
                 className="w-full h-full min-h-[260px] sm:min-h-[350px] object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute bottom-3 left-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
-                {project.col2ImgLabel}
+              <div className="absolute bottom-3 left-4 bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold text-white/90 border border-white/10">
+                Live Overview
               </div>
             </div>
           </div>

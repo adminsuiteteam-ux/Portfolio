@@ -11,11 +11,11 @@ const ROW1_SCREENSHOTS = [
 ];
 
 const ROW2_SCREENSHOTS = [
-  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com%2Fservices?w=1280',
-  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com%2Fshop?w=1280',
-  'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com%2Fadmission?w=1280',
-  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com%2Fprojects?w=1280',
-  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com%2Fdashboard?w=1280',
+  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fadminsuite.onrender.com?w=900',
+  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fbrownfortemechanical.com?w=900',
+  'https://s0.wp.com/mshots/v1/https%3A%2F%2Ftarepetmontessorischool.com?w=900',
+  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fgabstep.com?w=900',
+  'https://s0.wp.com/mshots/v1/https%3A%2F%2Fegoldtechnology.com?w=900',
 ];
 
 export const MarqueeSection: React.FC = () => {
@@ -36,7 +36,6 @@ export const MarqueeSection: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Repeat live site screenshots for infinite smooth marquee movement
   const row1ImagesTripled = [
     ...ROW1_SCREENSHOTS,
     ...ROW1_SCREENSHOTS,
@@ -100,7 +99,7 @@ export const MarqueeSection: React.FC = () => {
                   src={url}
                   alt={`Live Site Snapshot Row 2 - ${idx}`}
                   loading="lazy"
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                 />
               </div>
             ))}
