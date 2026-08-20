@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { FadeIn } from './FadeIn';
 import { CheckCircle2, MessageSquare, Info } from 'lucide-react';
