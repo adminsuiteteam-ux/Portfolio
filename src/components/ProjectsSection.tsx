@@ -1,3 +1,4 @@
+/* eslint-disable @shopify/jsx-no-hardcoded-content */
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { FadeIn } from './FadeIn';

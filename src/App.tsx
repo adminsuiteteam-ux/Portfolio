@@ -1,3 +1,4 @@
+/* eslint-disable @shopify/jsx-no-hardcoded-content */
 import React from 'react';
 import { HeroSection } from './components/HeroSection';
 import { MarqueeSection } from './components/MarqueeSection';

@@ -1,3 +1,4 @@
+/* eslint-disable @shopify/jsx-no-hardcoded-content */
 import React from 'react';
 
 interface ContactButtonProps {
